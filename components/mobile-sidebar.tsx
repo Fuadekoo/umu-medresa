@@ -159,8 +159,11 @@ export function MobileSidebar() {
       {/* sidebar panel */}
       <div
         className={`fixed top-0 right-0 bottom-0 h-screen w-3/5 bg-card border-l shadow-2xl z-60 transform transition-transform duration-300 ease-in-out md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen
+            ? "translate-x-0 opacity-100 pointer-events-auto"
+            : "translate-x-full opacity-0 pointer-events-none"
         }`}
+        aria-hidden={!isOpen}
       >
         <div className="flex flex-col h-full">
           {/* header */}
