@@ -1,23 +1,25 @@
-"use client"
+"use client";
 
-import { Send } from 'lucide-react'
-import { useEffect, useState } from "react"
+import { Send } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function TelegramButton() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     // Show button after a small delay for a nice entrance effect
     const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 1000)
+      setIsVisible(true);
+    }, 1000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
-  const username = "fuad0859"
-  const message = encodeURIComponent("I come from the website I want to start education")
-  const telegramUrl = `https://t.me/${username}?text=${message}`
+  const username = "nei34m";
+  const message = encodeURIComponent(
+    "I come from the website and I want to start education"
+  );
+  const telegramUrl = `https://t.me/${username}?text=${message}`;
 
   return (
     <a
@@ -32,5 +34,5 @@ export function TelegramButton() {
       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#229ED9] opacity-20"></span>
       <Send className="relative h-6 w-6 -ml-1 mt-1" />
     </a>
-  )
+  );
 }
