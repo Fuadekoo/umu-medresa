@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Languages, Sun, Moon } from "lucide-react";
+import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -45,14 +45,9 @@ export function LanguageToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          {/* show Sun for English, Moon for Amharic to resemble light/dark icons */}
-          {language === "en" ? (
-            <Sun className="h-5 w-5" />
-          ) : (
-            <Moon className="h-5 w-5" />
-          )}
-          <span className="sr-only">Change language</span>
+        <Button variant="ghost" className="flex items-center gap-2">
+          <Languages className="h-4 w-4" />
+          <span className="text-sm">Lang</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
