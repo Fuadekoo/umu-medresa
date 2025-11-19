@@ -21,7 +21,7 @@ const galleryItems = [
     id: 2,
     type: 'video',
     src: '/video-thumbnail-quran-recitation.jpg',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video
+    videoUrl: 'https://www.youtube.com/embed/bAdKB7zn3bQ', // Placeholder video
     alt: 'Quran Recitation Competition',
     category: 'videos'
   },
@@ -43,7 +43,7 @@ const galleryItems = [
     id: 5,
     type: 'video',
     src: '/video-thumbnail-tajweed-class.jpg',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video
+    videoUrl: 'https://www.youtube.com/embed/bAdKB7zn3bQ', // Placeholder video
     alt: 'Tajweed Class Highlights',
     category: 'videos'
   },
