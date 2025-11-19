@@ -1,6 +1,6 @@
 "use client";
-                  <a
-                    href={`https://t.me/nei34m?text=${encodeURIComponent("Hi! I came from the website")}`}
+
+import React, { useEffect, useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
