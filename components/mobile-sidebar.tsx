@@ -1,6 +1,6 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+                  <a
+                    href={`https://t.me/nei34m?text=${encodeURIComponent("Hi! I came from the website")}`}
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -13,6 +13,7 @@ export function MobileSidebar() {
   const t = (key: TranslationKey) => translations[language][key];
 
   const [active, setActive] = useState("");
+  const pointerRef = useRef({ active: false, moved: false });
 
   // track current hash/path for active link styling
   useEffect(() => {
@@ -114,8 +115,25 @@ export function MobileSidebar() {
   return (
     <>
       {/* menu toggle button (mobile) */}
+      {/* menu toggle button (mobile) - open only on deliberate taps/clicks */}
       <button
-        onClick={() => setIsOpen(true)}
+        onPointerDown={() => {
+          pointerRef.current.active = true;
+          pointerRef.current.moved = false;
+        }}
+        onPointerMove={() => {
+          if (pointerRef.current.active) pointerRef.current.moved = true;
+        }}
+        onPointerUp={() => {
+          if (pointerRef.current.active && !pointerRef.current.moved)
+            setIsOpen(true);
+          pointerRef.current.active = false;
+          pointerRef.current.moved = false;
+        }}
+        onPointerCancel={() => {
+          pointerRef.current.active = false;
+          pointerRef.current.moved = false;
+        }}
         className="md:hidden p-2 hover:bg-accent rounded-lg transition-colors"
         aria-label="Open menu"
       >
@@ -153,7 +171,7 @@ export function MobileSidebar() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="font-medium text-sm text-sky-600">FUAD</div>
+              <div className="font-medium text-sm text-sky-600">Menu</div>
             </div>
             <button
               onClick={closeMenu}
