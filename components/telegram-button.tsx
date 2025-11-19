@@ -16,7 +16,7 @@ export function TelegramButton() {
       target="_blank"
       rel="noopener noreferrer"
       className={
-        "fixed bottom-6 left-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#229ED9] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#229ED9] focus:ring-offset-2"
+        "fixed bottom-6 right-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#229ED9] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#229ED9] focus:ring-offset-2"
       }
       aria-label="Contact on Telegram"
       style={{ zIndex: 9999 }}
