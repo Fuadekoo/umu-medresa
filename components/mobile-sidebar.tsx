@@ -134,6 +134,14 @@ export function MobileSidebar() {
           pointerRef.current.active = false;
           pointerRef.current.moved = false;
         }}
+        onClick={() => {
+          // fallback for environments where pointer events may not fire as expected.
+          try {
+            if (!pointerRef.current.moved) setIsOpen(true);
+          } catch (e) {
+            setIsOpen(true);
+          }
+        }}
         className="md:hidden p-2 hover:bg-accent rounded-lg transition-colors"
         aria-label="Open menu"
       >
