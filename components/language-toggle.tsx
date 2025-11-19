@@ -22,7 +22,7 @@ const LanguageContext = React.createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = React.useState<Language>("en");
+  const [language, setLanguage] = React.useState<Language>("am");
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
@@ -50,7 +50,7 @@ export function LanguageToggle() {
           <span className="text-sm">Lang</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" portal={false}>
         <DropdownMenuItem onClick={() => setLanguage("en")}>
           {language === "en" ? "✓ " : ""}English
         </DropdownMenuItem>
