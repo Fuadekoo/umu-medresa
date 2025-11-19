@@ -222,7 +222,7 @@ export function MobileSidebar() {
           {/* fallback enroll button for small screens */}
           <div className="p-4 border-t md:hidden">
             <a
-              href={`https://t.me/nei23m?text=${encodeURIComponent(
+              href={`https://t.me/nei34m?text=${encodeURIComponent(
                 "I come from the website and I want to start education"
               )}`}
               target="_blank"
